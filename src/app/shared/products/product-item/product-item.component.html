@@ -4,7 +4,9 @@
   </div>
 } @else {
   <div class="product-item-container" [routerLink]="['/product-details', productItem().id]">
-    <img [src]="productItem().image" alt="Product Image" />
+    <div class="image-wrapper">
+      <img [src]="productItem().image" alt="Product Image" />
+    </div>
     <h3>{{ productItem().title }}</h3>
     <p>{{ productItem().category }}</p>
     <p class="price">${{ productItem().price }}</p>

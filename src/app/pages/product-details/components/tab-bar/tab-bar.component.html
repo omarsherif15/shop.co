@@ -1,0 +1,32 @@
+<p-tabs value="1">
+    <p-tablist>
+        <p-tab value="0">Product Details</p-tab>
+        <p-tab value="1">Rating & Reviews</p-tab>
+        <p-tab value="2">FAQs</p-tab>
+    </p-tablist>
+    <p-tabpanels>
+        <p-tabpanel value="0">
+            <p class="m-0"> Under construction</p>
+        </p-tabpanel>
+        <p-tabpanel value="1">
+            <div class="rating-container">
+              <header>
+                <h3 class="m-0"> All Reviews (451)</h3>
+                <app-button label="Write a Review" class="write-review-btn"></app-button>
+              </header>
+
+              <div class="ratings-grid">
+                @for (item of [1, 2, 3, 4, 5, 6, 7]; track $index) {
+                  <app-feedback-card></app-feedback-card>
+                }
+              </div>
+
+              <app-button label="View All Reviews" class="all-reviews-btn" [isOutlined]="true"></app-button>
+            </div>
+            
+        </p-tabpanel>
+        <p-tabpanel value="2">
+            <p class="m-0"> Under construction </p>
+        </p-tabpanel>
+    </p-tabpanels>
+</p-tabs>

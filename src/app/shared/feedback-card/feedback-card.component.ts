@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RatingModule } from 'primeng/rating';
 
@@ -10,5 +10,6 @@ import { RatingModule } from 'primeng/rating';
   styleUrl: './feedback-card.component.scss',
 })
 export class FeedbackCardComponent {
+  width = input<string>('100%');
   value: number = 4;
 }

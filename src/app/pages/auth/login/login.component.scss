@@ -1,0 +1,94 @@
+.login-container {
+  display: block;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 550px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+
+  label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+  input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    &:focus {
+      border-color: #007bff;
+    }
+  }
+}
+button {
+  height: 52px;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 60px;
+  padding: 10px 20px;
+  margin-bottom: 1rem;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+.secondary {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+.register-prompt {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+a {
+  display: block;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  justify-self: end;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

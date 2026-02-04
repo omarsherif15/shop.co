@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from "../shared/button/button.component";
+import { ButtonComponent } from '../shared/button/button.component';
 
 @Component({
   selector: 'app-footer',
@@ -7,6 +7,4 @@ import { ButtonComponent } from "../shared/button/button.component";
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
-export class FooterComponent {
-
-}
+export class FooterComponent {}

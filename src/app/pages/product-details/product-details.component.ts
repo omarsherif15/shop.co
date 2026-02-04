@@ -1,33 +1,44 @@
-import { Component, inject, input, signal } from '@angular/core';
+import { AfterViewInit, Component, inject, input, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 import { RatingModule } from 'primeng/rating';
 
 import { BreadcrumbModule } from 'primeng/breadcrumb';
-import { Product, ProductsService } from '../products.service';
 import { ButtonComponent } from '../../shared/button/button.component';
 import { DecimalPipe } from '@angular/common';
 import { ColorSelectComponent } from "./components/color-select/color-select.component";
 import { SizeSelectorComponent } from "./components/size-selector/size-selector.component";
+import { Product, ProductsService } from '../../shared/products/products.service';
+import { TabBarComponent } from "./components/tab-bar/tab-bar.component";
+import { FeaturedProductsComponent } from "../../shared/products/featured-products/featured-products.component";
 
 @Component({
   selector: 'app-product-details',
-  imports: [BreadcrumbModule, DecimalPipe, RatingModule, FormsModule, ColorSelectComponent, SizeSelectorComponent, ButtonComponent],
+  imports: [
+    BreadcrumbModule,
+    DecimalPipe,
+    RatingModule,
+    FormsModule,
+    ColorSelectComponent,
+    SizeSelectorComponent,
+    ButtonComponent,
+    TabBarComponent,
+    FeaturedProductsComponent,
+  ],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss',
 })
-export class ProductDetailsComponent {
+export class ProductDetailsComponent implements OnInit , AfterViewInit{
   private productService = inject(ProductsService);
   isLoading = signal(false);
-  productItem = signal<Product | null>(null);
+  productItem = signal<Product>({} as Product);
+  relatedProducts = signal<Product[]>([]);
   id = input.required<number>();
 
   newPrice = signal(0);
-  discountPercentage = signal(20);
+  discountPercentage = signal('');
 
   cartAmount = signal(1);
-
-  
 
   items: MenuItem[] | undefined;
   home: MenuItem | undefined;
@@ -40,15 +51,30 @@ export class ProductDetailsComponent {
     this.isLoading.set(true);
     this.productService.getSingleProduct(this.id()).subscribe({
       next: (product) => {
-        this.newPrice.set(product.price - (product.price * this.discountPercentage()) / 100);
+        this.newPrice.set(product.newPrice ?? 0);
+        this.discountPercentage.set(product.discountPercentage ?? 0);
         this.isLoading.set(false);
         this.productItem.set(product);
+
+        this.productService.getRelatedProducts(this.productItem().category).subscribe({
+          next: (products) => {
+            console.log(products);
+            this.relatedProducts.set(products);
+          },
+          error: (error) => {
+            console.error('Error fetching related products:', error);
+          },
+        });
       },
       error: (error) => {
         this.isLoading.set(false);
         console.error('Error fetching featured products:', error);
       },
     });
+  }
+
+  ngAfterViewInit() { 
+    
   }
 
   onIncreaseCartAmount() {

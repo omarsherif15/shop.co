@@ -1,6 +1,6 @@
 <app-hero />
 <app-brands />
-<app-featured-products title="Featured Products" />
-<app-featured-products title="Trending Products"/>
+<app-featured-products title="Featured Products" [items]="items()" [isLoading]="isLoading()" />
+<app-featured-products title="Trending Products" [items]="items()" [isLoading]="isLoading()" />
 <app-categories />
 <app-feedbacks />

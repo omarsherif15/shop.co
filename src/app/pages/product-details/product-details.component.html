@@ -27,6 +27,7 @@
       <app-size-selector />
 
       <hr class="divider" />
+
       <div class="actions">
         <div class="quantity-selector">
           <button (click)="onDecreaseCartAmount()">
@@ -40,5 +41,16 @@
         <app-button label="Add to Cart" width="100%" class="add-to-cart-btn"></app-button>
       </div>
     </div>
+  </div>
+
+  <app-tab-bar />
+
+  <div class="related-products-section">
+    <app-featured-products
+      [title]="'Related Products'"
+      [items]="relatedProducts()"
+      [isLoading]="isLoading()"
+    >
+    </app-featured-products>
   </div>
 </div>

@@ -1,6 +1,6 @@
 import { UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { FeedbackCardComponent } from "../feedback-card/feedback-card.component";
+import { FeedbackCardComponent } from '../../../shared/feedback-card/feedback-card.component';
 
 @Component({
   selector: 'app-feedbacks',
@@ -8,6 +8,4 @@ import { FeedbackCardComponent } from "../feedback-card/feedback-card.component"
   templateUrl: './feedbacks.component.html',
   styleUrl: './feedbacks.component.scss',
 })
-export class FeedbacksComponent {
-
-}
+export class FeedbacksComponent {}
