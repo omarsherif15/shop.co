@@ -1,0 +1,37 @@
+.outlined-button {
+  height: 52px;
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 60px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+.filled-button {
+  height: 52px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 60px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
+}

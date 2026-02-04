@@ -1,0 +1,11 @@
+<div class="featured-products-container">
+  <h1>{{ title() }}</h1>
+  <div class="products-grid">
+    @for (item of items(); track item.id) {
+      <app-product-item [productItem]="item" [isLoading]="isLoading()"> </app-product-item>
+    }
+  </div>
+  <app-button label="View All Products" [isOutlined]="true" width="220px" color="#000"> </app-button>
+
+  <hr/>
+</div>

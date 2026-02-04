@@ -1,0 +1,17 @@
+<div>
+  <div class="feedback-header">
+      <h1>{{"Our Happy Customers" | uppercase}}</h1>
+      <div class="controls">
+        <i class="pi pi-arrow-left"></i>
+        <i class="pi pi-arrow-right"></i>
+      </div>
+  </div>
+
+  <div class="feedback-array">
+    @for (feedback of [1, 2, 3, 4, 5, 6, 7]; track $index) {
+      <app-feedback-card></app-feedback-card>
+    }
+
+  </div>
+  
+</div>

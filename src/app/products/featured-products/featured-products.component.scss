@@ -1,0 +1,21 @@
+.products-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem;
+}
+
+.featured-products-container {
+  text-align: center;
+  margin: 5rem auto;
+}
+
+hr{
+  width: 70%; 
+  margin-top: 5rem; 
+  background-color: red
+}

@@ -1,0 +1,41 @@
+
+.feedback-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+  margin: auto;
+
+  .controls{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  i{
+    cursor: pointer;
+
+    &:hover{
+      background-color: #000;
+      color: #fff;
+      border-radius: 50%;
+      padding: 0.5rem;
+    }
+  }
+}
+h1{
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #000;
+}
+
+.feedback-array{
+  display: flex;
+  justify-content: start;
+  flex-wrap: nowrap;
+  margin: 0 4rem;
+  margin-bottom: 4rem;
+  gap: 2rem;
+}

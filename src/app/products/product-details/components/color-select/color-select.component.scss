@@ -1,0 +1,53 @@
+// Color Selection Styling: Container for color selection UI
+.color-selection {
+  label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  // Flex container for color buttons to arrange them horizontally
+  .color-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  // Circular button styling for each color option
+  button {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%; // Makes the button perfectly circular
+    border: 2px solid #e0e0e0; // Default light gray border
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease; // Smooth animation for all changes
+    padding: 0;
+    background-color: transparent;
+
+    // Checkmark icon styling
+    i {
+      color: white;
+      font-size: 0.75rem;
+      opacity: 0; // Hidden by default
+      transition: opacity 0.3s ease;
+    }
+
+    // Hover state: Enhance visual feedback when user hovers over color button
+    &:hover {
+      transform: scale(1.1); // Slight zoom effect on hover
+    }
+
+    // Selected state: Bold border and shadow when color is selected
+    &.selected {
+
+      // Show checkmark when button is selected
+      i {
+        opacity: 1;
+      }
+    }
+  }
+}

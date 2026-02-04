@@ -1,0 +1,13 @@
+<p-menubar class="menubar" [model]="items">
+    <ng-template #start>
+       <img src="SHOP.CO.svg" alt="logo" height="40" class="mr-2">
+    </ng-template>
+    <ng-template #end>
+        <div class="end-icons">
+            <input type="text" pInputText placeholder="Search" class="w-36" />
+            <i class="pi pi-search search-icon" (click)="toggleSearch()"></i>
+            <i class="pi pi-shopping-cart"></i>
+            <i class="fa-regular fa-circle-user"></i>
+        </div>
+    </ng-template> 
+</p-menubar>

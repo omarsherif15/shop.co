@@ -1,0 +1,71 @@
+.menubar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: black;
+  height: 80px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+// :host ::ng-deep {
+
+//   .p-menubar-item-content {
+//     background-color: #ffffff;
+
+//     &:hover {
+//       background-color: #000 !important;
+//       border-radius: 20px;
+//       background: none;
+//     }
+
+//     &:focus {
+//       background-color: #000 !important;
+//       border-radius: 20px;
+//       background: none;
+//     }
+//   }
+// }
+
+img {
+  height: 40px;
+  width: 160px;
+  margin: 0;
+}
+
+.end-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  input {
+    width: 300px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 62px;
+    padding: 12px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  // Search icon button for mobile
+  .search-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 20px;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  i {
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0;
+  }
+}

@@ -1,0 +1,12 @@
+<div class="categories-container">
+  <h1>{{"Browse by Dress Style" | uppercase}}</h1>
+
+  <div class="categories-grid">
+    @for (category of ['Casual', 'Formal', 'Party', 'Gym']; track $index) {
+    <div class="category-card">
+      <h2>{{ category }}</h2>
+      <img [src]="'categories/' + category.toLowerCase().replace(' ', '-') + '.png'" [alt]="category" />
+    </div>
+  }
+  </div>
+</div>

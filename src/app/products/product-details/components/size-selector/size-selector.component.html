@@ -1,0 +1,17 @@
+      <!-- Color Selection Section: Displays circular color buttons with checkmark on selection -->
+      <div class="size-selection">
+        <label>Choose Size</label>
+        <!-- Loop through sizes array and create a circular button for each size -->
+        <div class="size-buttons">
+          @for (size of sizes; track size.value) {
+            <button
+              [style.background-color]="size.value"
+              [class.selected]="selectedSize() === size.value"
+              (click)="selectSize(size.value)"
+              [attr.aria-label]="'Select ' + size.name + ' size'"
+            >
+              {{ size.name }}
+            </button>
+          }
+        </div>
+      </div>
