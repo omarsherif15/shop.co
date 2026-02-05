@@ -4,11 +4,13 @@ import { providePrimeNG } from 'primeng/config';
 import { PrimeNG_Preset } from './primeng-preset';
 
 import { routes } from './app.routes';
+import { MessageService } from 'primeng/api';
 
 
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    MessageService,
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes, withComponentInputBinding()),
     providePrimeNG({

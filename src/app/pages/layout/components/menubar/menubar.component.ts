@@ -4,10 +4,11 @@ import { MenuItem } from 'primeng/api';
 import { InputTextModule } from 'primeng/inputtext';
 import { Menubar } from 'primeng/menubar';
 import { Ripple } from 'primeng/ripple';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-menubar',
-  imports: [Menubar, InputTextModule, CommonModule],
+  imports: [Menubar, InputTextModule, CommonModule, RouterLink],
   templateUrl: './menubar.component.html',
   styleUrl: './menubar.component.scss',
 })

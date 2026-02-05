@@ -1,1 +1,22 @@
-<p>cart works!</p>
+<div class="page">
+  <p-breadcrumb [model]="items" [home]="home" />
+
+  @if (isLoggedIn) {
+    @if (cart() && cart()?.products!.length > 0) {
+      <div class="cart">
+        <div class="cart-container">
+          @for (item of cart()?.products!; track $index) {
+            <app-cart-item [cartItem]="item" />
+          }
+        </div>
+        <div class="cart-summary">
+          <app-order-summary />
+        </div>
+      </div>
+    } @else {
+      <app-empty-cart />
+    }
+  } @else {
+    <h3>Please log in to view your cart.</h3>
+  }
+</div>

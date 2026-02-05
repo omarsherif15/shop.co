@@ -2,23 +2,21 @@
   <h2 class="login-title">Login to Your Account</h2>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
     <div class="form-group">
-      <label for="email">Email</label>
+      <label for="username">Username</label>
       <input
         pInputText
-        type="email"
-        id="email"
-        placeholder="Email"
-        formControlName="email"
-        [invalid]="isInvalid('email')"
+        type="text"
+        id="username"
+        placeholder="Username"
+        formControlName="userName"
+        [invalid]="isInvalid('userName')"
       />
-      @if (isInvalid('email')) {
-        @if (loginForm.get('email')?.errors?.['required']) {
-          <p-message severity="error" size="small" variant="simple">Email is required.</p-message>
+      @if (isInvalid('userName')) {
+        @if (loginForm.get('userName')?.errors?.['required']) {
+          <p-message severity="error" size="small" variant="simple">Username is required.</p-message>
         }
-        @if (loginForm.get('email')?.errors?.['email']) {
-          <p-message severity="error" size="small" variant="simple"
-            >Please enter a valid email.</p-message
-          >
+        @if (loginForm.get('userName')?.errors?.['minlength']) {
+          <p-message severity="error" size="small" variant="simple">Username must be at least 3 characters long.</p-message>
         }
       }
     </div>

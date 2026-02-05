@@ -1,0 +1,23 @@
+<div class="cart-item">
+  <div class="cart-item-image">
+    <img [src]="cartItem().product.image" alt="Product Image" />
+  </div>
+  <div class="cart-item-details">
+     <div class="header">
+      <h3>{{ cartItem().product.title }}</h3>
+      <i class="pi pi-trash delete-icon" (click)="onRemoveFromCart()"></i>
+    </div>
+    <div class="footer">
+      <p>Price: ${{ cartItem().product.price }}</p>
+        <div class="quantity-selector">
+          <button (click)="onDecreaseCartAmount()">
+            <i class="pi pi-minus"></i>
+          </button>
+          <span>{{ quantity() }}</span>
+          <button (click)="onIncreaseCartAmount()">
+            <i class="pi pi-plus"></i>
+          </button>
+        </div>
+    </div>
+  </div>
+</div>

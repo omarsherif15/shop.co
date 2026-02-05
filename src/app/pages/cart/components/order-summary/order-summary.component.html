@@ -1,0 +1,40 @@
+<div class="order-summary">
+  <h2>Order Summary</h2>
+
+  <p>
+    <span class="summary-label">Subtotal</span>
+    <span class="summary-value">$200</span>
+  </p>
+  
+  <p>
+    <span class="summary-label">Shipping</span>
+    <span class="summary-value">$50</span>
+  </p>
+  
+  <p>
+    <span class="summary-label">Tax</span>
+    <span class="summary-value">$100</span>
+  </p>
+  <hr>
+  <p>
+    <span class="summary-label">Total</span>
+    <span class="summary-value">$350</span>
+  </p>
+
+  <div class="promo-code-group">
+    <input type="text" placeholder="Promo Code" class="promo-code-input">
+    <app-button class="promo-code-button" label="Apply"></app-button>
+  </div>
+
+  <app-button class="checkout-button" label="Proceed to Checkout" width="100%"></app-button>
+
+</div>
+
+<!--
+ <h2>Order Summary</h2>
+  <p>Total Items: {{ totalItems() }}</p>
+  <p>Subtotal: ${{ subtotal() | number: '1.2-2' }}</p>
+  <p>Shipping: ${{ shipping() | number: '1.2-2' }}</p>
+  <p>Tax: ${{ tax() | number: '1.2-2' }}</p>
+  <p>Total: ${{ total() | number: '1.2-2' }}</p>
+ -->

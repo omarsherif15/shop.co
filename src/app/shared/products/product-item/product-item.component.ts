@@ -1,14 +1,13 @@
 import { Component, inject, input, signal } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 import { SkeletonModule } from 'primeng/skeleton';
 
 import { Product } from '../products.service';
-import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-item',
-  imports: [SkeletonModule, RouterLink , DecimalPipe],
+  imports: [SkeletonModule, RouterLink],
   templateUrl: './product-item.component.html',
   styleUrl: './product-item.component.scss',
 })

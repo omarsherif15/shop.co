@@ -2,21 +2,21 @@
   <p-breadcrumb [model]="items" [home]="home" />
   <div class="product-container">
     <div class="product-image">
-      <img [src]="productItem()?.image" alt="Product Image" />
+      <img [src]="productItem().image" alt="Product Image" />
     </div>
     <div class="product-details">
-      <h1>{{ productItem()?.title }}</h1>
+      <h1>{{ productItem().title }}</h1>
 
       <div class="product-rating">
-        <p-rating [ngModel]="productItem()?.rating?.rate" [readonly]="true" />
+        <p-rating [ngModel]="productItem().rating?.rate" [readonly]="true" />
       </div>
 
       <div class="product-price">
         <p class="new-price">${{ newPrice() | number: '1.2-2' }}</p>
-        <p class="old-price">${{ productItem()?.price }}</p>
+        <p class="old-price">${{ productItem().price }}</p>
         <p class="discount">-{{ discountPercentage() }}%</p>
       </div>
-      <p class="description">{{ productItem()?.description }}</p>
+      <p class="description">{{ productItem().description }}</p>
 
       <hr class="divider" />
 

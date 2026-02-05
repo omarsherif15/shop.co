@@ -1,3 +1,14 @@
+@if (showBanner) {
+  <div class="login-banner">
+    <p>
+      SignUp and get 20% off to your first purchase
+      <a routerLink="/Auth/sign-up" style="color: #ffcc00; text-decoration: underline"
+        >Register Now</a
+      >
+    </p>
+  </div>
+}
+
 <app-menubar />
 <router-outlet></router-outlet>
 <app-footer />

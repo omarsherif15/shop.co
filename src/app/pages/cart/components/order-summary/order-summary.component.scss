@@ -1,0 +1,38 @@
+.order-summary:not(:first-child) {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+p{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #000;
+
+  .summary-label{
+    color: #0f0f0f;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  .summary-value{
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
+.promo-code-group{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 1rem 0;
+
+  input{
+    flex: 1;
+    border-radius: 20px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+}
