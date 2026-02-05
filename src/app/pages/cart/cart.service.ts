@@ -1,5 +1,5 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { Product, ProductsService } from '../../shared/products/products.service';
+import { Product, ProductsService } from '../../core/products.service';
 import { HttpClient } from '@angular/common/http';
 import { map, switchMap, forkJoin, of } from 'rxjs';
 
@@ -53,5 +53,20 @@ export class CartService {
         );
       }),
     );
+  }
+
+  addToCart(cartItem: CartItem) {
+    return this.http
+      .post<Cart>(`${this.API_URL}`, {
+        userId: 1,
+        date: new Date().toISOString(),
+        products: [cartItem],
+      })
+      .pipe(
+        switchMap((cart) => {
+          this.userCart.set(cart);
+          return of(cart);
+        }),
+      );
   }
 }

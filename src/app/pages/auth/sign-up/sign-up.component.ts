@@ -5,7 +5,7 @@ import { ButtonModule } from 'primeng/button';
 import { MessageModule } from 'primeng/message';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../../core/auth.service';
 import { Router } from '@angular/router';
 
 

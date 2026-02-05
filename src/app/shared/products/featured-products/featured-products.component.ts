@@ -1,6 +1,6 @@
 import { Component, inject, input, OnInit, signal } from '@angular/core';
 
-import { Product, ProductsService } from '../../products/products.service';
+import { Product, ProductsService } from '../../../core/products.service';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { ButtonComponent } from '../../button/button.component';
 
@@ -14,7 +14,4 @@ export class FeaturedProductsComponent {
   title = input.required<string>();
   items = input.required<Product[]>();
   isLoading = input.required<boolean>();
-  
-
-  
 }

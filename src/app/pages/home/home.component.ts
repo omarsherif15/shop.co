@@ -1,11 +1,11 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 
 import { HeroComponent } from './hero/hero.component';
-import { BrandsComponent } from "./brands/brands.component";
-import { CategoriesComponent } from "./categories/categories.component";
-import { FeedbacksComponent } from "./feedbacks/feedbacks.component";
+import { BrandsComponent } from './brands/brands.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 import { FeaturedProductsComponent } from '../../shared/products/featured-products/featured-products.component';
-import { Product, ProductsService } from '../../shared/products/products.service';
+import { Product, ProductsService } from '../../core/products.service';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   private productService = inject(ProductsService);
   items = signal<Product[]>([]);
   isLoading = signal(false);
-  
+
   ngOnInit() {
     this.isLoading.set(true);
     this.productService.getFeaturedProducts(5).subscribe({

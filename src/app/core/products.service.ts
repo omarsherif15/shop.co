@@ -1,6 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, throwError } from 'rxjs';
+import { API_URL } from './constants.service';
 
 export interface Product {
   id: number;
@@ -21,10 +22,8 @@ export class ProductsService {
   // Read only signal
   products = this.featuredProducts.asReadonly();
 
-  private apiUrl = 'https://fakestoreapi.com/';
-
   getFeaturedProducts(limit?: number) {
-    return this.httpClient.get<Product[]>(this.apiUrl + 'products').pipe(
+    return this.httpClient.get<Product[]>(API_URL + 'products').pipe(
       map((resData) => resData.slice(0, limit)),
       catchError((errorRes) => throwError(() => new Error('Failed to load places.'))),
     );
@@ -32,10 +31,10 @@ export class ProductsService {
 
   getRelatedProducts(category: string) {
     console.log(category);
-    return this.httpClient.get<Product[]>(this.apiUrl + 'products').pipe(
+    return this.httpClient.get<Product[]>(API_URL + 'products').pipe(
       map((resData) => {
         console.log(resData);
-        return resData.filter((product) => product.category === "men's clothing");
+        return resData.filter((product) => product.category === category);
       }),
       catchError((errorRes) => throwError(() => new Error('Failed to load places.'))),
     );
@@ -43,7 +42,7 @@ export class ProductsService {
 
   getSingleProduct(id: number) {
     const discountPercentage: number = Math.random() * 30; // Random discount between 0% and 30%
-    return this.httpClient.get<Product>(this.apiUrl + 'products/' + id).pipe(
+    return this.httpClient.get<Product>(API_URL + 'products/' + id).pipe(
       map((resData) => ({
         ...resData,
         newPrice: (resData.price * discountPercentage) / 100,

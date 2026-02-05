@@ -5,8 +5,9 @@ import { ButtonModule } from 'primeng/button';
 import { MessageModule } from 'primeng/message';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../../core/auth.service';
 import { Router } from '@angular/router';
+import { UsersService } from '../../../core/users.service';
 
 
 
@@ -19,6 +20,8 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   private readonly messageService = inject(MessageService);
   private readonly authService = inject(AuthService);
+    private readonly usersService = inject(UsersService);
+  
   private readonly router = inject(Router);
 
   loginForm = new FormGroup({

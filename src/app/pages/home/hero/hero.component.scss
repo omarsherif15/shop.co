@@ -4,7 +4,7 @@
 }
 
 .hero-image {
-    display:  block;
+  display: block;
   width: 100%;
   object-fit: cover;
   object-position: top;
@@ -51,28 +51,36 @@ hr {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin-right: 1.5rem;
+    margin: 0;
   }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1550px) {
   .hero-body {
     margin: 0 auto;
-    top: 12.5rem;
-    left: 6.25rem;
+    top: 9rem;
+    left: 5rem;
 
-    .stat-number {
-      font-size: 1rem;
+    .hero-statistics {
+      gap: 2rem;
+
+      .stat-number {
+        font-size: 1rem;
+      }
+      p,
+      .stat-label {
+        font-size: 1rem;
+      }
     }
 
     h1 {
       font-size: 3rem;
       font-weight: bolder;
-    }
 
-    p,
-    .stat-label {
-      font-size: 0.875rem;
+      @media screen and (max-width: 1200px) {
+        font-size: 2.5rem;
+        
+      }
     }
   }
 }
@@ -84,19 +92,18 @@ hr {
     top: 6rem;
     left: 1rem;
 
-    .stat-number {
-      font-size: 1rem;
+    .hero-statistics {
+      gap: 1.5rem;
+      align-items: center;
+
+      .stat-number {
+        font-size: 1rem;
+      }
     }
 
     h1 {
-      font-size: 1rem;
+      font-size: 2rem;
       font-weight: bolder;
-    }
-
-    p,
-    .stat-label {
-      font-size: 0.875rem;
     }
   }
 }
-

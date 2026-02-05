@@ -3,7 +3,7 @@ import { Router, RouterLink } from '@angular/router';
 
 import { SkeletonModule } from 'primeng/skeleton';
 
-import { Product } from '../products.service';
+import { Product } from '../../../core/products.service';
 
 @Component({
   selector: 'app-product-item',

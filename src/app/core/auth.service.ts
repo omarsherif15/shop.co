@@ -1,7 +1,10 @@
 import { inject, Injectable } from "@angular/core";
-import { LocalStorageService } from "../../core/local-storage.service";
 import { HttpClient } from "@angular/common/http";
 import { catchError } from "rxjs/internal/operators/catchError";
+import { LocalStorageService } from "./local-storage.service";
+import { API_URL } from "./constants.service";
+import { UsersService } from "./users.service";
+import { map } from "rxjs";
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +13,7 @@ export class AuthService {
   private readonly localStorageKey = 'auth_token';
   private readonly localStorage = inject(LocalStorageService);
   private readonly http = inject(HttpClient);
-
-  private API_URL = 'https://fakestoreapi.com/';
+  private readonly usersService = inject(UsersService);
 
   setToken(token: string) {
     this.localStorage.setItem(this.localStorageKey, token);
@@ -19,7 +21,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.http.post(
-      `${this.API_URL}auth/login`,
+      `${API_URL}auth/login`,
       { 
         username: email,
         password: password
@@ -39,7 +41,7 @@ export class AuthService {
 
   signUp(email: string, userName: string, password: string) {
     return this.http.post(
-      `${this.API_URL}users`,
+      `${API_URL}users`,
       { 
         email,
         userName,

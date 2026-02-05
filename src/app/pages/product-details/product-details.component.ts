@@ -6,11 +6,11 @@ import { RatingModule } from 'primeng/rating';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { ButtonComponent } from '../../shared/button/button.component';
 import { DecimalPipe } from '@angular/common';
-import { ColorSelectComponent } from "./components/color-select/color-select.component";
-import { SizeSelectorComponent } from "./components/size-selector/size-selector.component";
-import { Product, ProductsService } from '../../shared/products/products.service';
-import { TabBarComponent } from "./components/tab-bar/tab-bar.component";
-import { FeaturedProductsComponent } from "../../shared/products/featured-products/featured-products.component";
+import { ColorSelectComponent } from './components/color-select/color-select.component';
+import { SizeSelectorComponent } from './components/size-selector/size-selector.component';
+import { Product, ProductsService } from '../../core/products.service';
+import { TabBarComponent } from './components/tab-bar/tab-bar.component';
+import { FeaturedProductsComponent } from '../../shared/products/featured-products/featured-products.component';
 
 @Component({
   selector: 'app-product-details',
@@ -28,7 +28,7 @@ import { FeaturedProductsComponent } from "../../shared/products/featured-produc
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss',
 })
-export class ProductDetailsComponent implements OnInit , AfterViewInit{
+export class ProductDetailsComponent implements OnInit, AfterViewInit {
   private productService = inject(ProductsService);
   isLoading = signal(false);
   productItem = signal<Product>({} as Product);
@@ -73,9 +73,7 @@ export class ProductDetailsComponent implements OnInit , AfterViewInit{
     });
   }
 
-  ngAfterViewInit() { 
-    
-  }
+  ngAfterViewInit() {}
 
   onIncreaseCartAmount() {
     this.cartAmount.update((val) => val + 1);
