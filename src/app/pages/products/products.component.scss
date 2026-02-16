@@ -1,0 +1,47 @@
+.products-page {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.page-content {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+
+  aside{
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 1rem;
+    margin-right: 1rem;
+    border: rgba(0, 0, 0, 0.1) 1px solid;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
+  }
+
+  main{
+    flex: 3;
+    background-color: #fff;
+    
+
+    header{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+      margin: 0;
+
+      & > :first-child {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #000;
+        margin: 0;
+      }
+
+    }
+  }
+}

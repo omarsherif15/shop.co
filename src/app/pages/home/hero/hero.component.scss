@@ -21,21 +21,22 @@ hr {
   left: 6.25rem;
   color: white;
   width: 30%;
+  margin: 0;
 
   h1 {
     margin: 0;
-    font-size: 4rem;
+    font-size: clamp(2rem, 4vw, 4rem);
     color: black;
     margin-bottom: 1rem;
   }
   .stat-number {
-    font-size: 2rem;
+    font-size: clamp(1rem, 1.5vw, 2rem);
     font-weight: bold;
   }
   p,
   .stat-label {
     margin: 0;
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
     color: black;
     margin-bottom: 1rem;
   }
@@ -45,6 +46,8 @@ hr {
     flex-direction: row;
     margin-top: 1.5rem;
     color: black;
+          gap: 1rem;
+
   }
 
   .stat-item {
@@ -52,6 +55,7 @@ hr {
     flex-direction: column;
     gap: 0.5rem;
     margin: 0;
+    
   }
 }
 
@@ -60,50 +64,14 @@ hr {
     margin: 0 auto;
     top: 9rem;
     left: 5rem;
-
-    .hero-statistics {
-      gap: 2rem;
-
-      .stat-number {
-        font-size: 1rem;
-      }
-      p,
-      .stat-label {
-        font-size: 1rem;
-      }
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: bolder;
-
-      @media screen and (max-width: 1200px) {
-        font-size: 2.5rem;
-        
-      }
-    }
   }
 }
 
 @media (max-width: 700px) {
   .hero-body {
     width: 90%;
-    margin: 0 auto;
+    margin: 4rem auto;
     top: 6rem;
     left: 1rem;
-
-    .hero-statistics {
-      gap: 1.5rem;
-      align-items: center;
-
-      .stat-number {
-        font-size: 1rem;
-      }
-    }
-
-    h1 {
-      font-size: 2rem;
-      font-weight: bolder;
-    }
   }
 }

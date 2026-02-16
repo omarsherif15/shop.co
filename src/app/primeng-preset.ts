@@ -41,6 +41,34 @@ export const PrimeNG_Preset = definePreset(Aura, {
         },
       },
     },
+
+    slider: {
+      colorScheme: {
+        light: {
+          track: {
+            borderRadius: '100px',
+            background: '#f0f0f0',
+            size: '6px',
+          },
+          handle: {
+            background: '#000',
+            content: {
+              background: '#000',
+            },
+          },
+        },
+      },
+    },
+
+    button: {
+      colorScheme: {
+        light: {
+          root: {
+            borderRadius: '10px',
+          },
+        },
+      },
+    }
   },
 
   semantic: {

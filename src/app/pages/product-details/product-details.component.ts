@@ -6,8 +6,8 @@ import { RatingModule } from 'primeng/rating';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { ButtonComponent } from '../../shared/button/button.component';
 import { DecimalPipe } from '@angular/common';
-import { ColorSelectComponent } from './components/color-select/color-select.component';
-import { SizeSelectorComponent } from './components/size-selector/size-selector.component';
+import { ColorSelectorComponent } from '../../shared/color-selector/color-selector.component';
+import { SizeSelectorComponent } from '../../shared/size-selector/size-selector.component';
 import { Product, ProductsService } from '../../core/products.service';
 import { TabBarComponent } from './components/tab-bar/tab-bar.component';
 import { FeaturedProductsComponent } from '../../shared/products/featured-products/featured-products.component';
@@ -19,7 +19,7 @@ import { FeaturedProductsComponent } from '../../shared/products/featured-produc
     DecimalPipe,
     RatingModule,
     FormsModule,
-    ColorSelectComponent,
+    ColorSelectorComponent,
     SizeSelectorComponent,
     ButtonComponent,
     TabBarComponent,

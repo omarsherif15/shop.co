@@ -1,0 +1,5 @@
+  <div class="products-grid">
+    @for (product of products; track product.id) {
+    <app-product-item [productItem]="product" [isLoading]="false"></app-product-item>
+    }
+  </div>

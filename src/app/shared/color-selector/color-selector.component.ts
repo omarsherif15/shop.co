@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
 
 @Component({
-  selector: 'app-color-select',
+  selector: 'app-color-selector',
   imports: [],
-  templateUrl: './color-select.component.html',
-  styleUrl: './color-select.component.scss',
+  templateUrl: './color-selector.component.html',
+  styleUrl: './color-selector.component.scss',
 })
-export class ColorSelectComponent {
+export class ColorSelectorComponent {
   // Signal to track the currently selected color value
   selectedColor = signal<string | null>(null);
 

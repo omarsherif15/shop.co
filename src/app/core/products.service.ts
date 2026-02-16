@@ -12,6 +12,49 @@ export interface Product {
   image: string;
   rating?: { rate: number; count: number };
 }
+
+export const MOCK_PRODUCTS: Product[] = [
+  {
+    id: 0,
+    title: 'T-Shirt with Tabe Details',
+    price: 120,
+    description: 'Cotton T-Shirt with a classic fit and tabe details on the sleeves.',
+    category: 'men',
+    image: 't-shirt.png',
+  },
+  {
+    id: 1,
+    title: 'T-Shirt with Tabe Details',
+    price: 120,
+    description: 'Cotton T-Shirt with a classic fit and tabe details on the sleeves.',
+    category: 'men',
+    image: 't-shirt.png',
+  },
+  {
+    id: 2,
+    title: 'T-Shirt with Tabe Details',
+    price: 120,
+    description: 'Cotton T-Shirt with a classic fit and tabe details on the sleeves.',
+    category: 'men',
+    image: 't-shirt.png',
+  },
+  {
+    id: 3,
+    title: 'T-Shirt with Tabe Details',
+    price: 120,
+    description: 'Cotton T-Shirt with a classic fit and tabe details on the sleeves.',
+    category: 'men',
+    image: 't-shirt.png',
+  },
+  {
+    id: 4,
+    title: 'T-Shirt with Tabe Details',
+    price: 120,
+    description: 'Cotton T-Shirt with a classic fit and tabe details on the sleeves.',
+    category: 'men',
+    image: 't-shirt.png',
+  },
+];
 @Injectable({
   providedIn: 'root',
 })
@@ -31,11 +74,7 @@ export class ProductsService {
 
   getRelatedProducts(category: string) {
     console.log(category);
-    return this.httpClient.get<Product[]>(API_URL + 'products').pipe(
-      map((resData) => {
-        console.log(resData);
-        return resData.filter((product) => product.category === category);
-      }),
+    return this.httpClient.get<Product[]>(API_URL + 'products/' + category).pipe(
       catchError((errorRes) => throwError(() => new Error('Failed to load places.'))),
     );
   }

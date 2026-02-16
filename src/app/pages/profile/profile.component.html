@@ -1,0 +1,127 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div class="profile-container">
+    <header>
+      <h1>Profile</h1>
+      <p>View & Update your profile information</p>
+    </header>
+    <div class="profile-section" formGroupName="contactInfo">
+      <h2>Contact Information</h2>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input
+          pInputText
+          id="email"
+          type="email"
+          placeholder="Enter your email"
+          formControlName="email"
+          [invalid]="isInvalid('email', 'contactInfo')"
+        />
+        @if (isInvalid('email', 'contactInfo')) {
+          <p-message severity="error" size="small" variant="simple"
+            >Email is required and must be valid.</p-message
+          >
+        }
+      </div>
+
+      <div class="form-field">
+        <label for="phoneNumber">Name</label>
+        <input
+          pInputText
+          id="phoneNumber"
+          type="text"
+          placeholder="Enter your Phone Number"
+          formControlName="phone"
+        />
+        @if (isInvalid('phone', 'contactInfo')) {
+          <p-message severity="error" size="small" variant="simple"
+            >Phone Number is required and must be valid.</p-message
+          >
+        }
+      </div>
+    </div>
+
+    <div class="profile-section" formGroupName="personalInfo">
+      <h2>Personal Information</h2>
+      <div class="form-field">
+        <label for="firstName">Name</label>
+        <input
+          id="firstName"
+          type="text"
+          placeholder="Enter your name"
+          formControlName="firstName"
+        />
+        @if (isInvalid('firstName', 'personalInfo')) {
+          <p-message severity="error" size="small" variant="simple"
+            >Name is required and must be valid.</p-message
+          >
+        }
+      </div>
+
+      <div class="form-field">
+        <label for="lastName">Last Name</label>
+        <input
+          id="lastName"
+          type="text"
+          placeholder="Enter your last name"
+          formControlName="lastName"
+        />
+        @if (isInvalid('lastName', 'personalInfo')) {
+          <p-message severity="error" size="small" variant="simple"
+            >Name is required and must be valid.</p-message
+          >
+        }
+      </div>
+
+      <div class="form-field">
+        <label for="nationality">Nationality</label>
+        <input
+          id="nationality"
+          type="text"
+          placeholder="Enter your Nationality"
+          formControlName="nationality"
+        />
+      </div>
+
+      <div class="form-field">
+        <label for="dateOfBirth">Date of Birth</label>
+        <input
+          id="dateOfBirth"
+          type="date"
+          placeholder="Enter your date of birth"
+          formControlName="dateOfBirth"
+        />
+      </div>
+
+      <div class="radio-group">
+        <div class="radio-item">
+          <p-radiobutton
+            formControlName="gender"
+            name="gender"
+            [inputId]="'genderMale'"
+            value="male"
+            [invalid]="isInvalid('genderMale', 'personalInfo')"
+          />
+          <label for="genderMale">Male</label>
+        </div>
+        <div class="radio-item">
+          <p-radiobutton
+            formControlName="gender"
+            name="gender"
+            [inputId]="'genderFemale'"
+            value="female"
+            [invalid]="isInvalid('genderFemale', 'personalInfo')"
+          />
+
+          <label for="genderFemale">Female</label>
+        </div>
+        @if (isInvalid('gender', 'personalInfo')) {
+          <p-message severity="error" size="small" variant="simple">
+            Gender is required
+            </p-message
+          >
+        }
+      </div>
+    </div>
+    <p-button label="Update Profile" type="submit" />
+  </div>
+</form>

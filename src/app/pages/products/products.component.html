@@ -1,0 +1,17 @@
+  <div class="products-page">
+    <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+
+    <div class="page-content">
+      <aside>
+        <app-products-filter />
+      </aside>
+      <main>
+        <header>
+          <p>{{ category() | titlecase }}</p>
+          <p>Products Page</p>
+        </header>
+        <app-products-grid />
+      </main>
+    </div>
+
+  </div>
